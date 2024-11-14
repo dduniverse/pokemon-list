@@ -7,7 +7,7 @@ const nextConfig = {
   },
 
   reactStrictMode: true,
-  swcMinify: true,
+  // swcMinify: true,
 
   // Uncoment to add domain whitelist
   // images: {
@@ -20,6 +20,8 @@ const nextConfig = {
   // },
 
   webpack(config) {
+    config.cache = false; // 캐시 비활성화
+
     // Grab the existing rule that handles SVG imports
     const fileLoaderRule = config.module.rules.find((rule) => rule.test?.test?.('.svg'));
 
