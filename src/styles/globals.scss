@@ -1,7 +1,8 @@
+@use './semantic-ui.scss' as *;
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import './semantic-ui.scss';
+// @import './semantic-ui.scss';
 
 @keyframes slide-reset {
   0% {
