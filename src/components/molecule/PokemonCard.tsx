@@ -1,7 +1,6 @@
 import PokemonImage from "../atom/PokemonImage";
 import TypeChip from "../atom/TypeChip";
 
-
 function PokemonCard({ id, name, types }) {
   return (
     <div className="flex flex-col items-center justify-center rounded-lg p-2 bg-gray-100 shadow-md transform transition-transform duration-300 hover:scale-105 hover:shadow-lg cursor-pointer">
