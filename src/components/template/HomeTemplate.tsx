@@ -1,24 +1,36 @@
+import { useState, useEffect, useMemo } from "react";
+import usePokemonList from "@/hooks/usePokemonList";
 import Header from "../atom/Header";
 import Search from "../atom/Search";
-import FilterAndSort from "../molecule/FilterAndSort";
+import SelectRegion from "../atom/SelectRegion";
+import SortOptions from "../atom/SortOptions";
 import PokemonList from "../organism/PokemonList";
+import { sortData } from "@/utils/sortData";
 
 function HomeTemplate() {
-  const mockPokemonData = [
-    { id: 25, name: "Pikachu", types: ["electric"], weight: 60, height: 4 },
-    { id: 1, name: "Bulbasaur", types: ["grass", "poison"], weight: 69, height: 7 },
-    { id: 4, name: "Charmander", types: ["fire"], weight: 85, height: 6 },
-    { id: 7, name: "Squirtle", types: ["water"], weight: 90, height: 5 },
-    { id: 39, name: "Jigglypuff", types: ["normal", "fairy"], weight: 55, height: 5 },
-    { id: 94, name: "Gengar", types: ["ghost", "poison"], weight: 405, height: 15 },
-  ];
+  const [region, setRegion] = useState("All");
+  const [sortType, setSortType] = useState("Lowest Number"); // 기본 정렬 값 설정
+
+  const { data: pokemonList, isPending } = usePokemonList({
+    itemsPerPage: 20,
+    region: region,
+  });
+
+  const sortedData = sortData(pokemonList, sortType); 
 
   return (
     <>
       <Header />
       <Search />
-      <FilterAndSort />
-      <PokemonList pokemonData={mockPokemonData} />
+      <div className="w-full flex flex-row justify-between items-center p-2 gap-2">
+        <SelectRegion onChange={setRegion} />
+        <SortOptions onChange={setSortType} />
+      </div>
+      {isPending ? (
+        <p>Loading...</p>
+      ) : (
+        <PokemonList pokemonData={sortedData} />
+      )}
     </>
   );
 }
