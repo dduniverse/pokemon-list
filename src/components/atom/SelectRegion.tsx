@@ -7,7 +7,7 @@ function SelectRegion({ onChange }) {
   return (
     <div className="w-full">
       <label
-        className="block text-sm font-medium text-gray-700 mb-2"
+        className="block font-medium text-gray-700 mb-2"
         id="regions-label"
       >
         Regions

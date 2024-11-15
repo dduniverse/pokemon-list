@@ -1,9 +1,9 @@
-import { regionUrls } from "@/types/constants";
+import { ITEMS_PER_PAGE, REGION_URLS } from "@/types/constants";
 import { getData } from "../getData";
 import { CombinedPokemonDataSchema, PokemonDetailSchema } from "./type";
 
-export const fetchPokemonData = async (itemsPerPage: number, region: string) => {
-  const url = region === 'All' ? `https://pokeapi.co/api/v2/pokemon?limit=${itemsPerPage}` : regionUrls[region];
+export const fetchPokemonData = async (region: string, offset: number) => {
+  const url = region === 'All' ? `https://pokeapi.co/api/v2/pokemon?offset=${offset}limit=${ITEMS_PER_PAGE}` : REGION_URLS[region];
   const response = await getData(url);
   return CombinedPokemonDataSchema.parse(response); 
 };

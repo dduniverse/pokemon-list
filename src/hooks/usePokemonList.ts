@@ -1,14 +1,18 @@
 import { pokemonService } from "@/services/pokemon/query"
+import { ITEMS_PER_PAGE } from "@/types/constants";
 import { getIdFromUrl } from "@/utils/getIdFromUrl";
 import { useQueries, useQuery } from "@tanstack/react-query";
 
 interface usePokemonListProps {
-  itemsPerPage: number;
   region?: string;
+  page: number;
 }
 
-function usePokemonList({ itemsPerPage, region }: usePokemonListProps) {
-  const {data: pokemonListData, isPending: pokemonListPending} = useQuery(pokemonService.getPokemonData(itemsPerPage, region));
+function usePokemonList({ region, page }: usePokemonListProps) {
+  const offset = (page - 1) * ITEMS_PER_PAGE;
+
+  // 포켓몬 리스트 데이터 요청
+  const {data: pokemonListData, isPending: pokemonListPending} = useQuery(pokemonService.getPokemonData(region, offset));
 
   let pokemonList: { name?: string; url?: string }[] = [];
   if (pokemonListData) {
@@ -23,6 +27,8 @@ function usePokemonList({ itemsPerPage, region }: usePokemonListProps) {
       }));
     }
   }
+
+  // detail 데이터 요청
   const detailQueries =
     pokemonList.map((pokemon) => {
       return pokemonService.getPokemonDetailData(getIdFromUrl(pokemon.url));
@@ -30,6 +36,7 @@ function usePokemonList({ itemsPerPage, region }: usePokemonListProps) {
 
   const pokemonDetail = useQueries({ queries: detailQueries });
 
+  // 리턴 데이터 형식
   const mergedData = pokemonList.map((pokemon, index) => {
     const detail = pokemonDetail[index]?.data || {};
     return {
@@ -38,7 +45,7 @@ function usePokemonList({ itemsPerPage, region }: usePokemonListProps) {
       url: pokemon.url,
       weight: detail.weight,
       height: detail.height,
-      types: detail.types?.map((typeInfo) => typeInfo.type.name) || [], // 타입 리스트
+      types: detail.types?.map((typeInfo) => typeInfo.type.name) || [],
     };
   });
 
