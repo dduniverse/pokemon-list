@@ -1,3 +1,5 @@
+import Home from "@/components/page/Home";
+
 export default function PokemonMainPage() {
-  return 'hello world!';
+  return <Home />;
 }
