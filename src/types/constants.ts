@@ -19,3 +19,16 @@ export const typeClassMap: { [key: string]: string } = {
   steel: "bg-gray-500 text-white",
   fairy: "bg-pink-300 text-gray-700",
 };
+
+// region별 pokedex url
+export const regionUrls: { [key: string]: string } = {
+  Kanto: 'https://pokeapi.co/api/v2/pokedex/kanto',
+  Johto: 'https://pokeapi.co/api/v2/pokedex/updated-johto',
+  Hoenn: 'https://pokeapi.co/api/v2/pokedex/updated-hoenn',
+  Sinnoh: 'https://pokeapi.co/api/v2/pokedex/original-sinnoh',
+  Unova: 'https://pokeapi.co/api/v2/pokedex/updated-unova',
+  Kalos: 'https://pokeapi.co/api/v2/pokedex/kalos-central',
+  Alola: 'https://pokeapi.co/api/v2/pokedex/updated-alola',
+  Galar: 'https://pokeapi.co/api/v2/pokedex/galar',
+  Paldea: 'https://pokeapi.co/api/v2/pokedex/paldea'
+};
