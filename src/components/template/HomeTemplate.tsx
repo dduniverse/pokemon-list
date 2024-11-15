@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from "react";
+import { useState } from "react";
 import usePokemonList from "@/hooks/usePokemonList";
 import Header from "../atom/Header";
 import Search from "../atom/Search";

@@ -1,6 +1,6 @@
 import { regionUrls } from "@/types/constants";
 import { getData } from "../getData";
-import { CombinedPokemonDataSchema, PokemonDetailSchema, PokemonListSchema, RegionDataSchema } from "./type";
+import { CombinedPokemonDataSchema, PokemonDetailSchema } from "./type";
 
 export const fetchPokemonData = async (itemsPerPage: number, region: string) => {
   const url = region === 'All' ? `https://pokeapi.co/api/v2/pokemon?limit=${itemsPerPage}` : regionUrls[region];

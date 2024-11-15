@@ -102,9 +102,4 @@ export const RegionDataSchema = z.object({
   version_groups: z.array(VersionGroupSchema),
 });
 
-export type PokemonListType = z.infer<typeof PokemonListSchema>;
-export type PokemonDetailType = z.infer<typeof PokemonDetailSchema>;
-export type RegionDataType = z.infer<typeof RegionDataSchema>;
-
 export const CombinedPokemonDataSchema = z.union([PokemonListSchema, RegionDataSchema]);
-export type CombinedPokemonDataType = z.infer<typeof CombinedPokemonDataSchema>;
