@@ -41,6 +41,9 @@ const nextConfig = {
         options: {
           dimensions: false,
           titleProp: true,
+          sassOptions: {
+            fiber: false,
+          },
         },
       }
     );
