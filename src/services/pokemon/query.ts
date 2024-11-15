@@ -2,10 +2,10 @@ import { queryOptions } from "@tanstack/react-query";
 import { fetchPokemonData, fetchPokemonDetailData } from "./fetch";
 
 export const pokemonService = {
-  getPokemonData: (itemsPerPage, region) =>
+  getPokemonData: (region, offset) =>
     queryOptions({
-      queryKey: ['pokemonData', region],
-      queryFn: () => fetchPokemonData(itemsPerPage, region),
+      queryKey: ['pokemonData', region, offset],
+      queryFn: () => fetchPokemonData(region, offset),
       staleTime: 1000 * 60 * 5, 
     }),
 

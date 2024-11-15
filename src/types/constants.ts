@@ -1,5 +1,10 @@
+export const DEFAULT_REGION = "All";
+export const DEFAULT_SORT = "Lowest Number";
+export const TOTAL_ITEMS_ALL = 1302; // 전체 포켓몬 개수 (All 기준)
+export const ITEMS_PER_PAGE = 20;
+
 // type별 color
-export const typeClassMap: { [key: string]: string } = {
+export const TYPE_CLASS_MAP: { [key: string]: string } = {
   normal: "bg-yellow-300 text-gray-700",
   fire: "bg-red-500 text-white",
   water: "bg-blue-500 text-white",
@@ -21,7 +26,7 @@ export const typeClassMap: { [key: string]: string } = {
 };
 
 // region별 pokedex url
-export const regionUrls: { [key: string]: string } = {
+export const REGION_URLS: { [key: string]: string } = {
   Kanto: 'https://pokeapi.co/api/v2/pokedex/kanto',
   Johto: 'https://pokeapi.co/api/v2/pokedex/updated-johto',
   Hoenn: 'https://pokeapi.co/api/v2/pokedex/updated-hoenn',

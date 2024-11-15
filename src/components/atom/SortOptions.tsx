@@ -5,7 +5,7 @@ function SortOptions({ onChange }) {
 
   return (
     <div>
-      <label htmlFor="sort-options">Sort</label>
+      <label htmlFor="sort-options" className="block font-medium text-gray-700 mb-2">Sort</label>
       <select
         id="sort-options"
         className="rounded-md border p-2 focus:outline-none hover:ring-1 hover:ring-amber-500 focus:ring-amber-500"
