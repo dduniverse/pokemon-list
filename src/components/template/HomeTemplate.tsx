@@ -10,17 +10,15 @@ import { processingData } from "@/utils/processingData";
 import { DEFAULT_REGION, DEFAULT_SORT, ITEMS_PER_PAGE, TOTAL_ITEMS_ALL } from "@/types/constants";
 
 function HomeTemplate() {
+  const [searchQuery, setSearchQuery] = useState("");
   const [region, setRegion] = useState(DEFAULT_REGION);
   const [sortType, setSortType] = useState(DEFAULT_SORT);
   const [page, setPage] = useState(1);
 
-  const { data: pokemonList, isPending } = usePokemonList({
-    region,
-    page,
-  });
+  const { data: pokemonList, isPending } = usePokemonList({ region, page });
 
   // 데이터 정렬 및 페이지네이션 처리
-  const processedData = processingData(pokemonList, region, sortType, page, ITEMS_PER_PAGE);
+  const processedData = processingData(pokemonList, searchQuery, region, sortType, page, ITEMS_PER_PAGE);
 
   // 상태 변경 핸들러
   const handleRegionChange = (newRegion: string) => {
@@ -39,13 +37,16 @@ function HomeTemplate() {
   return (
     <>
       <Header />
-      <Search />
+      <Search onChange={(e) => setSearchQuery(e.target.value)} />
       <div className="w-full flex flex-row justify-between items-center p-2 gap-2">
         <SelectRegion onChange={handleRegionChange} />
         <SortOptions onChange={handleSortChange} />
       </div>
       {isPending ? (
-        <p>Loading...</p>
+        // <p>Loading...</p>
+        <div className="flex justify-center items-center h-full">
+          <img src="/pokeball.gif" alt="Loading..." />
+        </div>      
       ) : (
         <>
           <PokemonList pokemonData={processedData} />
