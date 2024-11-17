@@ -1,16 +1,25 @@
 import { sortData } from "./sortData";
 
 export function processingData(
-  pokemonList: any[], 
+  data: any[], 
+  searchQuery: string,
   region: string,
   sortType: string,
   page: number,
   itemsPerPage: number
 ) {
-  if (!pokemonList) return [];
+  if (!data) return [];
+
+  // 검색어로 데이터 필터링
+  let filteredData = data;
+  if (searchQuery) {
+    filteredData = filteredData.filter((item) =>
+      item.name.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+  }
 
   // 정렬 처리
-  let sortedData = sortData(pokemonList, sortType);
+  let sortedData = sortData(filteredData, sortType);
 
   // 페이지네이션 처리
   if (region !== "All") {
