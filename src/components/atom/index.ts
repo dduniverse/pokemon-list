@@ -1,9 +1,9 @@
-import Header from "./Header";
-import Pagination from "./Pagination";
-import PokemonImage from "./PokemonImage";
-import Search from "./Search";
-import SelectRegion from "./SelectRegion";
-import SortOptions from "./SortOptions";
-import TypeChip from "./TypeChip";
+import Header from "./header";
+import Pagination from "./pagination";
+import PokemonImage from "./pokemon-image";
+import Search from "./search";
+import SelectRegion from "./select-region";
+import SortOptions from "./sort-options";
+import TypeChip from "./type-chip";
 
 export { Header, Pagination, PokemonImage, Search, SelectRegion, SortOptions, TypeChip };

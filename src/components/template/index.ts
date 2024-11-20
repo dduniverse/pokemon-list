@@ -1,4 +1,4 @@
-import HomeTemplate from "./HomeTemplate";
-import DetailTemplate from "./DetailTemplate";
+import HomeTemplate from "./home-template";
+import DetailTemplate from "./detail-template";
 
 export { HomeTemplate, DetailTemplate };
