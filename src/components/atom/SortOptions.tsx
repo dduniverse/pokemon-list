@@ -1,4 +1,4 @@
-export default function SortOptions({ onChange }) {
+export default function SortOptions({ value, onChange }) {
   const handleSortChange = (e) => {
     onChange(e.target.value); // 부모로 선택된 정렬 옵션 전달
   };
@@ -10,7 +10,7 @@ export default function SortOptions({ onChange }) {
         id="sort-options"
         className="rounded-md border p-2 focus:outline-none hover:ring-1 hover:ring-amber-500 focus:ring-amber-500"
         onChange={handleSortChange}
-        defaultValue="Lowest Number" // 기본값 설정
+        value={value}
       >
         <option value="Lowest Number">Lowest Number</option>
         <option value="Highest Number">Highest Number</option>

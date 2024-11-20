@@ -40,6 +40,7 @@ function Home() {
       pokemonData={processedData}
       isPending={isPending}
       region={region}
+      sortType={sortType}
       page={page}
       totalItems={region === DEFAULT_REGION ? TOTAL_ITEMS_ALL : pokemonList?.length || 0}
       handlers={{

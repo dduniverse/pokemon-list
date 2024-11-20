@@ -5,6 +5,7 @@ interface HomeTemplateProps {
   pokemonData: any[];
   isPending: boolean;
   region: string;
+  sortType: string;
   page: number;
   totalItems: number;
   handlers: {
@@ -15,14 +16,14 @@ interface HomeTemplateProps {
   };
 }
 
-export default function HomeTemplate({ pokemonData, isPending, region, page, totalItems, handlers }: HomeTemplateProps) {
+export default function HomeTemplate({ pokemonData, isPending, region, sortType, page, totalItems, handlers }: HomeTemplateProps) {
   return (
     <>
       <Header />
       <Search onChange={(e) => handlers.onSearchChange(e.target.value)} />
       <div className="w-full flex flex-row justify-between items-center p-2 gap-2">
         <SelectRegion onChange={handlers.onRegionChange} />
-        <SortOptions onChange={handlers.onSortChange} />
+        <SortOptions value={sortType} onChange={handlers.onSortChange} />
       </div>
       {isPending ? (
         <div className="flex justify-center items-center h-full">
