@@ -1,3 +1,3 @@
-import PokemonList from "./PokemonList";
+import PokemonList from "./pokemon-list";
 
 export { PokemonList };
