@@ -1,4 +1,4 @@
-import DetailTemplate from "../template/DetailTemplate";
+import { DetailTemplate } from "@/components/template";
 
 function DetailPage({id}) {
   return (

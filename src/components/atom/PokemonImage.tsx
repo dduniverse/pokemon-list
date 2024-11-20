@@ -1,4 +1,4 @@
-function PokemonImage({ id, name }) {
+export default function PokemonImage({ id, name }) {
   return (
     <img
       src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`}
@@ -7,5 +7,3 @@ function PokemonImage({ id, name }) {
     />
   )
 }
-
-export default PokemonImage;

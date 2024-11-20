@@ -1,4 +1,4 @@
-function SortOptions({ onChange }) {
+export default function SortOptions({ onChange }) {
   const handleSortChange = (e) => {
     onChange(e.target.value); // 부모로 선택된 정렬 옵션 전달
   };
@@ -20,5 +20,3 @@ function SortOptions({ onChange }) {
     </div>
   );
 }
-
-export default SortOptions;
