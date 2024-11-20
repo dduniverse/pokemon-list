@@ -1,4 +1,4 @@
-function SelectRegion({ onChange }) {
+export default function SelectRegion({ onChange }) {
   
   const handleRegionChange = (e) => {
     onChange(e.target.value);
@@ -38,5 +38,3 @@ function SelectRegion({ onChange }) {
     </div>
   );
 }
-
-export default SelectRegion;

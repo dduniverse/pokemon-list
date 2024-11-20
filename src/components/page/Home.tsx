@@ -1,4 +1,4 @@
-import HomeTemplate from "../template/HomeTemplate";
+import { HomeTemplate } from "@/components/template";
 
 function Home() {
   return (

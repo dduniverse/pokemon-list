@@ -1,6 +1,6 @@
-import Header from "../atom/Header";
+import { Header } from "@/components/atom";
 
-function DetailTemplate({ id }) {
+export default function DetailTemplate({ id }) {
   return (
     <>
       <Header />
@@ -8,5 +8,3 @@ function DetailTemplate({ id }) {
     </>
   )
 }
-
-export default DetailTemplate;

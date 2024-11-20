@@ -1,4 +1,4 @@
-function Search({ onChange }) {
+export default function Search({ onChange }) {
   return (
     <div className="w-full flex flex-row justify-between items-center p-2 gap-2">
       <input
@@ -13,5 +13,3 @@ function Search({ onChange }) {
     </div>
   );
 }
-
-export default Search;

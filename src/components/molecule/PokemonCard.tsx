@@ -1,8 +1,7 @@
 import Link from "next/link";
-import PokemonImage from "../atom/PokemonImage";
-import TypeChip from "../atom/TypeChip";
+import { PokemonImage, TypeChip } from "@/components/atom";
 
-function PokemonCard({ id, name, types }) {
+export default function PokemonCard({ id, name, types }) {
   return (
     <Link href={`/${id}`}>
       <div className="flex flex-col items-center justify-center rounded-lg p-2 bg-gray-100 shadow-md transform transition-transform duration-300 hover:scale-105 hover:shadow-lg cursor-pointer">
@@ -18,5 +17,3 @@ function PokemonCard({ id, name, types }) {
     </Link>
   );
 }
-
-export default PokemonCard;

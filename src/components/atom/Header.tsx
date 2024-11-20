@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-function Header() {
+export default function Header() {
   return (
     <div className="bg-yellow-400">
       <div className="flex items-center p-4">
@@ -15,5 +15,3 @@ function Header() {
     </div>
   );
 }
-
-export default Header;
