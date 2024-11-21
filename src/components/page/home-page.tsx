@@ -1,10 +1,10 @@
 import { useState } from "react";
-import usePokemonList from "@/hooks/usePokemonList";
 import { HomeTemplate } from "@/components/template";
+import usePokemonList from "@/hooks/usePokemonList";
 import { processingData } from "@/utils/processingData";
 import { DEFAULT_REGION, DEFAULT_SORT, ITEMS_PER_PAGE, TOTAL_ITEMS_ALL } from "@/types/constants";
 
-function Home() {
+export default function HomePage() {
   const [searchQuery, setSearchQuery] = useState("");
   const [region, setRegion] = useState(DEFAULT_REGION);
   const [sortType, setSortType] = useState(DEFAULT_SORT);
@@ -52,5 +52,3 @@ function Home() {
     />
   );
 }
-
-export default Home;
