@@ -8,7 +8,6 @@ export const pokemonDetailService = {
       queryKey: ['pokemonDetail', pokemonId],
       queryFn: () => fetchPokemonDetailData(pokemonId),
       enabled: pokemonId > 0,
-      staleTime: 1000 * 60 * 5, 
     }),
 
   getSpeciesData: (pokemonId: number) =>
@@ -16,7 +15,6 @@ export const pokemonDetailService = {
       queryKey: ['speciesData', pokemonId],
       queryFn: () => fetchSpeciesData(pokemonId),
       enabled: !!pokemonId,
-      staleTime: 1000 * 60 *  5,
     }),
 
   getEvolutionData: (evolutionUrl: string) =>
@@ -24,6 +22,5 @@ export const pokemonDetailService = {
       queryKey: ['evolutionData', evolutionUrl],
       queryFn: () => fetchEvolutionData(evolutionUrl),
       enabled: !!evolutionUrl,
-      staleTime: 1000 * 60 *  5,
     })
 }
