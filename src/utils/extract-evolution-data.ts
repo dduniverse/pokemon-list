@@ -1,5 +1,5 @@
 import { GroupedEvolution } from '../types/types';
-import { getIdFromUrl } from './getIdFromUrl';
+import { getIdFromUrl } from './get-id-from-url';
 
 export const extractEvolutionData = (chain: any): GroupedEvolution[] => {
   const evolutionData: GroupedEvolution[] = [];
