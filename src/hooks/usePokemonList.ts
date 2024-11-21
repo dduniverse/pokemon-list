@@ -1,6 +1,6 @@
 import { pokemonService } from "@/services/pokemon/query"
 import { ITEMS_PER_PAGE } from "@/types/constants";
-import { getIdFromUrl } from "@/utils/getIdFromUrl";
+import { getIdFromUrl } from "@/utils/get-id-from-url";
 import { useQueries, useQuery } from "@tanstack/react-query";
 
 interface usePokemonListProps {

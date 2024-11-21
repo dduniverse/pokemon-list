@@ -1,5 +1,5 @@
 import { ITEMS_PER_PAGE } from "@/types/constants";
-import { getPageNumbers } from "@/utils/getPageNumbers";
+import { getPageNumbers } from "@/utils/get-page-numbers";
 
 export default function Pagination({ currentPage, onPageChange, totalItems }) {
   const totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE);
