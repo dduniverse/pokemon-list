@@ -1,7 +1,6 @@
 import { Header, PokemonImage } from "@/components/atom";
-import PokemonNav from "../molecule/pokemon-nav";
-import PokemonInfo from "../molecule/pokemon-info";
-import EvolutionList from "../organism/evolution-list";
+import { PokemonInfo } from "@/components/molecule";
+import { PokemonNav, EvolutionList } from "@/components/organism";
 
 export default function DetailTemplate({ id, name, height, weight, types, prevPokemon, nextPokemon, evolutions }) {
   return (

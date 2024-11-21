@@ -1,5 +1,5 @@
 import Link from "next/link";
-import PokemonImage from "./pokemon-image";
+import { PokemonImage } from "@/components/atom";
 
 interface NavigationButtonProps {
   disabled: boolean; 

@@ -1,4 +1,4 @@
-import NavButton from "../atom/nav-button";
+import { NavButton } from "@/components/molecule";
 
 export default function PokemonNav({ id, name, prevPokemon, nextPokemon }) {
   return (

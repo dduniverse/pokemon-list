@@ -1,5 +1,5 @@
 import { GroupedEvolution } from "@/types/types";
-import EvolutionTree from "../molecule/evolution-tree";
+import { EvolutionTree } from "@/components/molecule";
 
 interface EvolutionListProps {
   evolutions: GroupedEvolution[];
