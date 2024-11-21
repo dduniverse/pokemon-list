@@ -1,5 +1,5 @@
-import Home from "@/components/page/home-page";
+import HomePage from "@/components/page/home-page";
 
 export default function PokemonMainPage() {
-  return <Home />;
+  return <HomePage />;
 }
