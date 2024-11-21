@@ -9,7 +9,7 @@ export default function EvolutionBox({ pokemon }: EvolutionBoxProps) {
   return (
     <Link href={`/${pokemon.id}`}>
       <div
-        className="flex justify-center items-center w-60 rounded-lg p-4 gap-1 transition-transform duration-300 ease-in-out
+        className="flex justify-center items-center w-72 rounded-lg p-4 gap-1 transition-transform duration-300 ease-in-out
                   transform hover:scale-105 shadow-sm hover:shadow-lg bg-gray-100 cursor-pointer overflow-hidden"
       >
         <PokemonImage id={pokemon.id} name={pokemon.name} />
