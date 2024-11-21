@@ -3,7 +3,7 @@ import { GroupedEvolution } from "@/types/types";
 import { extractEvolutionData } from "@/utils/extractEvolutionData";
 import usePokemonDetail from "@/hooks/usePokemonDetail";
 
-function DetailPage({id}) {
+export default function DetailPage({id}) {
   // console.log(id);
   const { data: pokemonDetail, isPending, isError } = usePokemonDetail({ pokemonID: Number(id) });
   // console.log(pokemonDetail);
@@ -23,5 +23,3 @@ function DetailPage({id}) {
     />
   );
 }
-
-export default DetailPage;

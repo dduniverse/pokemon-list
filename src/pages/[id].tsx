@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import DetailPage from "@/components/page/Detail";
+import DetailPage from "@/components/page/detail-page";
 
 function Detail() {
   const router = useRouter();
