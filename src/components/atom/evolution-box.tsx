@@ -1,6 +1,6 @@
-import { GroupedEvolution } from "@/types/types";
-import PokemonImage from "./pokemon-image";
 import Link from "next/link";
+import { GroupedEvolution } from "@/types/types";
+import { PokemonImage } from "@/components/atom";
 
 interface EvolutionBoxProps {
   pokemon: GroupedEvolution;

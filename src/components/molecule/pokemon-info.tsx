@@ -1,5 +1,4 @@
-import StatBox from "../atom/stat-box";
-import TypeChip from "../atom/type-chip";
+import { StatBox, TypeChip } from "@/components/atom";
 
 interface PokemonInfoProps {
   height: number;

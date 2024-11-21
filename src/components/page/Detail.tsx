@@ -4,9 +4,9 @@ import { extractEvolutionData } from "@/utils/extractEvolutionData";
 import usePokemonDetail from "@/hooks/usePokemonDetail";
 
 function DetailPage({id}) {
-  console.log(id);
+  // console.log(id);
   const { data: pokemonDetail, isPending, isError } = usePokemonDetail({ pokemonID: Number(id) });
-  console.log(pokemonDetail);
+  // console.log(pokemonDetail);
 
   const evolutions: GroupedEvolution[] = pokemonDetail ? extractEvolutionData(pokemonDetail.evolutions) : [];
 

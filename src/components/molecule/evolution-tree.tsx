@@ -1,5 +1,5 @@
 import { GroupedEvolution } from "@/types/types";
-import EvolutionBox from "../atom/evolution-box";
+import { EvolutionBox } from "@/components/atom";
 
 interface EvolutionTreeProps {
   evolution: GroupedEvolution;
