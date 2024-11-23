@@ -1,5 +1,5 @@
 import { ITEMS_PER_PAGE, REGION_URLS } from "@/types/constants";
-import { getData } from "../getData";
+import { getData } from "../get-data";
 import { CombinedPokemonDataSchema, PokemonDetailSchema } from "./type";
 
 export const fetchPokemonData = async (region: string, offset: number) => {

@@ -1,4 +1,4 @@
-import { getData } from "../getData";
+import { getData } from "../get-data";
 import { EvolutionChainSchema, SpeciesDataSchema } from "./type";
 
 // species 데이터 요청
