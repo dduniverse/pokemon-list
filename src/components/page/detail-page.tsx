@@ -1,7 +1,7 @@
 import { DetailTemplate } from "@/components/template";
 import { GroupedEvolution } from "@/types/types";
 import { extractEvolutionData } from "@/utils/extract-evolution-data";
-import usePokemonDetail from "@/hooks/usePokemonDetail";
+import usePokemonDetail from "@/hooks/use-pokemon-detail";
 
 export default function DetailPage({id}) {
   // console.log(id);

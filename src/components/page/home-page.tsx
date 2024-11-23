@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { HomeTemplate } from "@/components/template";
-import usePokemonList from "@/hooks/usePokemonList";
+import usePokemonList from "@/hooks/use-pokemon-list";
 import { processingData } from "@/utils/processing-data";
 import { DEFAULT_REGION, DEFAULT_SORT, ITEMS_PER_PAGE, TOTAL_ITEMS_ALL } from "@/types/constants";
 
