@@ -7,14 +7,14 @@ export const pokemonDetailService = {
     queryOptions({
       queryKey: ['pokemonDetail', pokemonId],
       queryFn: () => fetchPokemonDetailData(pokemonId),
-      enabled: pokemonId > 0,
+      enabled: pokemonId > 0 && pokemonId < 10276,
     }),
 
-  getSpeciesData: (pokemonId: number) =>
+  getSpeciesData: (speciesUrl: string) =>
     queryOptions({
-      queryKey: ['speciesData', pokemonId],
-      queryFn: () => fetchSpeciesData(pokemonId),
-      enabled: !!pokemonId,
+      queryKey: ['speciesData', speciesUrl],
+      queryFn: () => fetchSpeciesData(speciesUrl),
+      enabled: !!speciesUrl,
     }),
 
   getEvolutionData: (evolutionUrl: string) =>

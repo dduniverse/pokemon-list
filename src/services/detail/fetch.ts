@@ -2,8 +2,8 @@ import { getData } from "../get-data";
 import { EvolutionChainSchema, SpeciesDataSchema } from "./type";
 
 // species 데이터 요청
-export const fetchSpeciesData = async (pokemonId: number) => {
-  const url = `https://pokeapi.co/api/v2/pokemon-species/${pokemonId}`;
+export const fetchSpeciesData = async (speciesUrl: string) => {
+  const url = speciesUrl;
   const data = await getData(url);
   return SpeciesDataSchema.parse(data);
 };

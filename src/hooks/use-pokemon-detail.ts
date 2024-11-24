@@ -12,7 +12,7 @@ export default function usePokemonDetail({ pokemonID }: usePokemonDetailProps) {
   const { data: pokemonData, error: pokemonError, isPending: isPokemonPending } = useQuery(pokemonDetailService.getPokemonDetailData(pokemonID));
   
   // 종 데이터 가져오기
-  const { data: speciesResponse, error: speciesError, isPending: isSpeciesPending } = useQuery(pokemonDetailService.getSpeciesData(pokemonID));
+  const { data: speciesResponse, error: speciesError, isPending: isSpeciesPending } = useQuery(pokemonDetailService.getSpeciesData(pokemonData?.species.url));
   
   // 진화 데이터 가져오기
   const { data: evolutionChain, error: evolutionError, isPending: isEvolutionPending } = useQuery(pokemonDetailService.getEvolutionData(speciesResponse?.evolution_chain?.url ?? ''));
