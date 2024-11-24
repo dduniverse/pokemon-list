@@ -1,7 +1,13 @@
 import { ITEMS_PER_PAGE } from "@/types/constants";
 import { getPageNumbers } from "@/utils/get-page-numbers";
 
-export default function Pagination({ currentPage, onPageChange, totalItems }) {
+interface PaginaionProps {
+  currentPage: number;
+  onPageChange: (page: number) => void;
+  totalItems: number;
+}
+
+export default function Pagination({ currentPage, onPageChange, totalItems }: PaginaionProps) {
   const totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE);
   const pageNumbers = getPageNumbers({currentPage, totalPages});
 

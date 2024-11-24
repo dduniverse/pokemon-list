@@ -1,5 +1,10 @@
-export default function SortOptions({ value, onChange }) {
-  const handleSortChange = (e) => {
+interface SortOptionsProps {
+  value: string;
+  onChange: (sortType: string) => void; // string 값을 전달
+}
+
+export default function SortOptions({ value, onChange }: SortOptionsProps) {
+  const handleSortChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     onChange(e.target.value); // 부모로 선택된 정렬 옵션 전달
   };
 

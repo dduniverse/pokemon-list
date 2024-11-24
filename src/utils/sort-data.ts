@@ -1,4 +1,6 @@
-export const sortData = (data, sortType) => {
+import { PokemonData } from "@/types/types";
+
+export const sortData = (data: PokemonData[], sortType: string): PokemonData[] => {
 
   if (!data) return [];
 

@@ -1,6 +1,14 @@
 import { NavButton } from "@/components/molecule";
+import { PokemonDetailType } from "@/services/pokemon/type";
 
-export default function PokemonNav({ id, name, prevPokemon, nextPokemon }) {
+interface PokemonNavProps {
+  id: number;
+  name: string;
+  prevPokemon: PokemonDetailType;
+  nextPokemon: PokemonDetailType;
+}
+
+export default function PokemonNav({ id, name, prevPokemon, nextPokemon }: PokemonNavProps) {
   return (
     <div className="flex flex-row items-center justify-between mt-5 mb-5 p-4">
       <NavButton
