@@ -9,8 +9,8 @@ interface DetailPageProps {
 
 export default function DetailPage({id}: DetailPageProps) {
   // console.log(id);
-  const { data: pokemonDetail, isPending, isError } = usePokemonDetail({ pokemonID: Number(id) });
-  console.log(pokemonDetail);
+  const { data: pokemonDetail, isPending } = usePokemonDetail({ pokemonID: Number(id) });
+  // console.log(pokemonDetail);
 
   const evolutions: GroupedEvolution[] = pokemonDetail ? extractEvolutionData(pokemonDetail.evolutions) : [];
 
@@ -24,6 +24,7 @@ export default function DetailPage({id}: DetailPageProps) {
       prevPokemon={pokemonDetail.prevPokemon}
       nextPokemon ={pokemonDetail.nextPokemon}
       evolutions={evolutions}
+      isPending={isPending}
     />
   );
 }

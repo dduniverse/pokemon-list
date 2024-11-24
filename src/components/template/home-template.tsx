@@ -1,5 +1,6 @@
 import { Header, Search, SelectRegion, SortOptions, Pagination } from "@/components/atom";
 import { PokemonList } from "@/components/organism";
+import { PokemonCardSkeleton } from "@/components/molecule"
 import { PokemonData } from "@/types/types";
 
 interface HomeTemplateProps {
@@ -27,8 +28,11 @@ export default function HomeTemplate({ pokemonData, isPending, region, sortType,
         <SortOptions value={sortType} onChange={handlers.onSortChange} />
       </div>
       {isPending ? (
-        <div className="flex justify-center items-center h-full">
-          <img src="/pokeball.gif" alt="Loading..." />
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
+          {/* 스켈레톤 8개 렌더링 */}
+          {Array.from({ length: 8 }).map((_, index) => (
+            <PokemonCardSkeleton key={index} />
+          ))}
         </div>
       ) : (
         <>
