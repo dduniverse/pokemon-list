@@ -20,7 +20,7 @@ export const EvolutionChainSchema: ZodSchema =
           url: z.string(),
         })
         .optional(),
-      evolution_details: z.any(), // 상세한 검증 없이 유연하게 처리
+      evolution_details: z.any(),
       evolves_to: z
         .array(z.lazy(() => EvolutionChainSchema))
         .optional()
@@ -30,3 +30,4 @@ export const EvolutionChainSchema: ZodSchema =
   .optional()
   .default({}); // 최상위 객체의 기본값을 빈 객체로 설정
 
+export type EvolutionChainType = z.infer<typeof EvolutionChainSchema>;

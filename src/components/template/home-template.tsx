@@ -1,8 +1,9 @@
 import { Header, Search, SelectRegion, SortOptions, Pagination } from "@/components/atom";
 import { PokemonList } from "@/components/organism";
+import { PokemonData } from "@/types/types";
 
 interface HomeTemplateProps {
-  pokemonData: any[];
+  pokemonData: PokemonData[];
   isPending: boolean;
   region: string;
   sortType: string;

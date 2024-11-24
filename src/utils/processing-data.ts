@@ -1,7 +1,8 @@
+import { PokemonData } from "@/types/types";
 import { sortData } from "./sort-data";
 
 export function processingData(
-  data: any[], 
+  data: PokemonData[], 
   searchQuery: string,
   region: string,
   sortType: string,

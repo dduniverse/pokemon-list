@@ -1,4 +1,8 @@
-export default function Search({ onChange }) {
+interface SearchProps {
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+}
+
+export default function Search({ onChange }: SearchProps) {
   return (
     <div className="w-full flex flex-row justify-between items-center p-2 gap-2">
       <input

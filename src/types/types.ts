@@ -3,3 +3,12 @@ export interface GroupedEvolution {
   id: number;
   children?: GroupedEvolution[]; 
 }
+
+export interface PokemonData {
+  id?: number;
+  name?: string;
+  url?: string;
+  weight?: number;
+  height?: number;
+  types: string[];
+}

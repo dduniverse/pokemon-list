@@ -103,3 +103,4 @@ export const RegionDataSchema = z.object({
 });
 
 export const CombinedPokemonDataSchema = z.union([PokemonListSchema, RegionDataSchema]);
+export type PokemonDetailType = z.infer<typeof PokemonDetailSchema>;

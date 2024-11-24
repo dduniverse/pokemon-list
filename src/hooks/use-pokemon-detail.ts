@@ -1,9 +1,12 @@
 import { pokemonDetailService } from "@/services/detail/query";
 import { useQuery } from "@tanstack/react-query";
 
+interface usePokemonDetailProps {
+  pokemonID: number;
+}
 
-export default function usePokemonDetail({ pokemonID }) {
-  console.log(pokemonID-1, pokemonID+1);
+export default function usePokemonDetail({ pokemonID }: usePokemonDetailProps) {
+  // console.log(pokemonID-1, pokemonID+1);
 
   // 포켓몬 상세 데이터 가져오기
   const { data: pokemonData, error: pokemonError, isPending: isPokemonPending } = useQuery(pokemonDetailService.getPokemonDetailData(pokemonID));

@@ -1,7 +1,8 @@
+import { EvolutionChainType } from '@/services/detail/type';
 import { GroupedEvolution } from '../types/types';
 import { getIdFromUrl } from './get-id-from-url';
 
-export const extractEvolutionData = (chain: any): GroupedEvolution[] => {
+export const extractEvolutionData = (chain: EvolutionChainType): GroupedEvolution[] => {
   const evolutionData: GroupedEvolution[] = [];
 
   const traverseChain = (data: any): GroupedEvolution | null => {

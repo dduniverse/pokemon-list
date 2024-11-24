@@ -1,7 +1,10 @@
-export default function SelectRegion({ onChange }) {
-  
-  const handleRegionChange = (e) => {
-    onChange(e.target.value);
+interface SelectRegionProps {
+  onChange: (region: string) => void; // string 값을 전달
+}
+
+export default function SelectRegion({ onChange }: SelectRegionProps) {
+  const handleRegionChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    onChange(e.target.value); // 선택된 지역 값을 상위로 전달
   };
 
   return (
