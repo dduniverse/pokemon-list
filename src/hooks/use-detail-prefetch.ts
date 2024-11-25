@@ -10,7 +10,7 @@ export const useDetailPrefetch = () => {
     if (!prefetchedIds.current.has(id)) {
       prefetchedIds.current.add(id);
       csrClient.prefetchQuery(pokemonDetailService.getPokemonDetailData(id));
-      csrClient.prefetchQuery(pokemonDetailService.getSpeciesData(id));
+      // csrClient.prefetchQuery(pokemonDetailService.getSpeciesData(id));
       csrClient.prefetchQuery(pokemonDetailService.getPokemonDetailData(id - 1)); // 이전 포켓몬
       csrClient.prefetchQuery(pokemonDetailService.getPokemonDetailData(id + 1)); // 다음 포켓몬
     }

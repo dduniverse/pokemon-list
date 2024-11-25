@@ -1,3 +1,6 @@
+import { pokemonService } from "@/services/pokemon/query";
+import { csrClient } from "@/services/react-query";
+
 interface SelectRegionProps {
   onChange: (region: string) => void; // string 값을 전달
 }
@@ -5,6 +8,10 @@ interface SelectRegionProps {
 export default function SelectRegion({ onChange }: SelectRegionProps) {
   const handleRegionChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     onChange(e.target.value); // 선택된 지역 값을 상위로 전달
+  };
+
+  const handleRegionHover = (region: string) => {
+    csrClient.prefetchQuery(pokemonService.getPokemonData(region, 0));
   };
 
   return (
@@ -21,7 +28,7 @@ export default function SelectRegion({ onChange }: SelectRegionProps) {
         aria-labelledby="regions-label"
       >
         {["All", "Kanto", "Johto", "Hoenn", "Sinnoh", "Unova", "Kalos", "Alola", "Galar", "Paldea"].map((region) => (
-          <label key={region} className="flex items-center cursor-pointer">
+          <label key={region} className="flex items-center cursor-pointer" onMouseEnter={() => handleRegionHover(region)} >
             <input
               type="radio"
               name="regions"
