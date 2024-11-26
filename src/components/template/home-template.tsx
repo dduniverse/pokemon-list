@@ -24,7 +24,7 @@ export default function HomeTemplate({ pokemonData, isPending, region, sortType,
       <Header />
       <Search onChange={(e) => handlers.onSearchChange(e.target.value)} />
       <div className="w-full flex flex-row justify-between items-center p-2 gap-2">
-        <SelectRegion onChange={handlers.onRegionChange} />
+        <SelectRegion value={region} onChange={handlers.onRegionChange} />
         <SortOptions value={sortType} onChange={handlers.onSortChange} />
       </div>
       {isPending ? (

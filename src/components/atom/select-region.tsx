@@ -2,10 +2,11 @@ import { pokemonService } from "@/services/pokemon/query";
 import { csrClient } from "@/services/react-query";
 
 interface SelectRegionProps {
+  value: string;
   onChange: (region: string) => void; // string 값을 전달
 }
 
-export default function SelectRegion({ onChange }: SelectRegionProps) {
+export default function SelectRegion({ value, onChange }: SelectRegionProps) {
   const handleRegionChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     onChange(e.target.value); // 선택된 지역 값을 상위로 전달
   };
@@ -35,7 +36,7 @@ export default function SelectRegion({ onChange }: SelectRegionProps) {
               value={region}
               className="hidden peer"
               onChange={handleRegionChange}
-              defaultChecked={region === "All"} // 기본값 설정
+              checked={value === region} // 선택된 값과 비교하여 같으면 체크
             />
             <span
               className="px-4 py-2 rounded-md text-sm bg-gray-200 text-gray-700 peer-checked:bg-amber-500 peer-checked:text-white transition-colors duration-200"
