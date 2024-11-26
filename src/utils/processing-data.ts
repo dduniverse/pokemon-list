@@ -9,7 +9,7 @@ export function processingData(
   page: number,
   itemsPerPage: number
 ) {
-  if (!data) return [];
+  if (!data) return {count: 0, currentPageData: []};
 
   // 검색어로 데이터 필터링
   let filteredData = data;
@@ -22,10 +22,16 @@ export function processingData(
   // 정렬 처리
   let sortedData = sortData(filteredData, sortType);
 
+  let currentPageData = []
   // 페이지네이션 처리
   if (region !== "All") {
-    sortedData = sortedData.slice((page - 1) * itemsPerPage, page * itemsPerPage);
+    currentPageData = sortedData.slice((page - 1) * itemsPerPage, page * itemsPerPage);
+  } else {
+    currentPageData = sortedData
   }
 
-  return sortedData;
+  return {
+    count: sortedData.length, // 전체 데이터 개수
+    currentPageData,     // 현재 페이지 데이터
+  };
 }
