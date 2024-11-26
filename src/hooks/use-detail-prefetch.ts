@@ -9,9 +9,13 @@ export const useDetailPrefetch = () => {
     // 아직 프리패칭 되지 않은 id에 대해서만 queryClient.prefetchQuery 호출
     if (!prefetchedIds.current.has(id)) {
       prefetchedIds.current.add(id);
+
       csrClient.prefetchQuery(pokemonDetailService.getPokemonDetailData(id));
-      // csrClient.prefetchQuery(pokemonDetailService.getSpeciesData(id));
-      csrClient.prefetchQuery(pokemonDetailService.getPokemonDetailData(id - 1)); // 이전 포켓몬
+
+      if (id - 1 > 0) {
+        csrClient.prefetchQuery(pokemonDetailService.getPokemonDetailData(id - 1)); // 이전 포켓몬
+      }
+      
       csrClient.prefetchQuery(pokemonDetailService.getPokemonDetailData(id + 1)); // 다음 포켓몬
     }
   };
