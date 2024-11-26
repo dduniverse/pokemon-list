@@ -21,7 +21,13 @@ export default function HomePage() {
   const { data: pokemonList, isPending } = usePokemonList({ region: selectedRegion, page: currentPage });
 
   // 데이터 처리
-  const processedData = processingData(pokemonList, searchQuery, selectedRegion, selectedSortType, currentPage, ITEMS_PER_PAGE);
+  const { count, currentPageData} = processingData(pokemonList, searchQuery, selectedRegion, selectedSortType, currentPage, ITEMS_PER_PAGE);
+
+  const totalItems = searchQuery
+  ? count // 검색된 결과 개수
+  : selectedRegion === DEFAULT_REGION
+  ? TOTAL_ITEMS_ALL // 기본 전체 개수
+  : count || 0; // 지역 필터 적용 시 개수
 
   // 핸들러
   const handleRegionChange = (newRegion: string) => {
@@ -40,16 +46,17 @@ export default function HomePage() {
 
   const handleSearchChange = (query: string) => {
     setSearchQuery(query);
+    setCurrentPage(1); 
   };
 
   return (
     <HomeTemplate
-      pokemonData={processedData}
+      pokemonData={currentPageData}
       isPending={isPending}
       region={selectedRegion}
       sortType={selectedSortType}
       page={currentPage}
-      totalItems={selectedRegion === DEFAULT_REGION ? TOTAL_ITEMS_ALL : pokemonList?.length || 0}
+      totalItems={totalItems}
       handlers={{
         onRegionChange: handleRegionChange,
         onSortChange: handleSortChange,
