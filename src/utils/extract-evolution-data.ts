@@ -3,6 +3,11 @@ import { GroupedEvolution } from '../types/types';
 import { getIdFromUrl } from './get-id-from-url';
 
 export const extractEvolutionData = (chain: EvolutionChainType): GroupedEvolution[] => {
+  if (!chain) {
+    console.warn("Invalid evolution data: chain is undefined");
+    return [];
+  }
+  
   const evolutionData: GroupedEvolution[] = [];
 
   const traverseChain = (data: any): GroupedEvolution | null => {

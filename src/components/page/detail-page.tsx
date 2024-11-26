@@ -12,7 +12,7 @@ export default function DetailPage({id}: DetailPageProps) {
   const { data: pokemonDetail, isPending } = usePokemonDetail({ pokemonID: id });
   // console.log(pokemonDetail);
 
-  const evolutions: GroupedEvolution[] = pokemonDetail ? extractEvolutionData(pokemonDetail.evolutions) : [];
+  const evolutions: GroupedEvolution[] = pokemonDetail?.evolutions ? extractEvolutionData(pokemonDetail.evolutions) : [];
 
   return (
     <DetailTemplate 

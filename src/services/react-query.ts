@@ -17,14 +17,27 @@ export const csrClient: QueryClient = new QueryClient({
       const toastId = 'query-error'; // 고유 ID 설정
 
       if (error instanceof Error) {
-        toast.error(error.message, {
-          id: toastId, // 동일한 ID를 가진 토스트는 한 번만 표시됨
-          style: errorToastStyle, // 에러 스타일 적용
-          iconTheme: {
-            primary: '#fff',
-            secondary: '#ff4d4f',
-          },
-        });
+        // 네트워크 오류
+        if (error.message.includes('Network Error')) {
+          toast.error('네트워크 연결을 확인해주세요.', {
+            id: toastId, // 동일한 ID를 가진 토스트는 한 번만 표시됨
+            style: errorToastStyle, // 에러 스타일 적용
+            iconTheme: {
+              primary: '#fff',
+              secondary: '#ff4d4f',
+            },
+          });
+        } else {
+          // 기타 에러 메시지
+          toast.error(error.message, {
+            id: toastId,
+            style: errorToastStyle,
+            iconTheme: {
+              primary: '#fff',
+              secondary: '#ff4d4f',
+            },
+          });
+        }
       } else {
         toast.error('알 수 없는 에러가 발생했습니다.', {
           id: toastId,
