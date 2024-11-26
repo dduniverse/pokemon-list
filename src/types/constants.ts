@@ -37,3 +37,20 @@ export const REGION_URLS: { [key: string]: string } = {
   Galar: 'https://pokeapi.co/api/v2/pokedex/galar',
   Paldea: 'https://pokeapi.co/api/v2/pokedex/paldea'
 };
+
+const defaultToastStyle = {
+  color: '#fff',
+  fontWeight: 'bold',
+  borderRadius: '8px',
+  padding: '16px',
+};
+
+export const errorToastStyle = {
+  ...defaultToastStyle,
+  background: '#ff4d4f',
+};
+
+export const successToastStyle = {
+  ...defaultToastStyle,
+  background: '#4caf50',
+};
