@@ -4,12 +4,12 @@ import { extractEvolutionData } from "@/utils/extract-evolution-data";
 import usePokemonDetail from "@/hooks/use-pokemon-detail";
 
 interface DetailPageProps {
-  id: string | string[];
+  id: number;
 }
 
 export default function DetailPage({id}: DetailPageProps) {
   // console.log(id);
-  const { data: pokemonDetail, isPending } = usePokemonDetail({ pokemonID: Number(id) });
+  const { data: pokemonDetail, isPending } = usePokemonDetail({ pokemonID: id });
   // console.log(pokemonDetail);
 
   const evolutions: GroupedEvolution[] = pokemonDetail ? extractEvolutionData(pokemonDetail.evolutions) : [];
